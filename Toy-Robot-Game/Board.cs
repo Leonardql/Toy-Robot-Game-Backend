@@ -38,7 +38,21 @@ namespace Toy_Robot_Game
             board[row, col] = objectNr;
         }
 
+       
 
+        public int Square(int row, int col)
+        {
+            return board[row,col];
+        }
+
+        public bool IsEmptySquare(int row, int col)
+        {
+            if (Square(row,col) == 0)
+            {
+                return true;
+            }
+            return false;
+        }
 
 
 

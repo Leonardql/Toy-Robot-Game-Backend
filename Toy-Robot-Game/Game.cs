@@ -19,7 +19,7 @@ namespace Toy_Robot_Game
 
         public void PlaceRobot(int row, int col, string facing)
         {
-            if (board.IsValidLocation(row, col))
+            if (board.IsValidLocation(row, col) && robot.IsFacingValid(facing))
             {
                 if (robot.Placed)
                 {
@@ -44,7 +44,10 @@ namespace Toy_Robot_Game
 
         public void PlaceWall(int row, int col)
         {
-            throw new NotImplementedException();
+            if(board.IsValidLocation(row,col) && board.IsEmptySquare(row,col))
+            {
+                board.PlaceOnBoard(row, col, 2);
+            }
         }
 
         public void Report()
