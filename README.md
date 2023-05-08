@@ -86,3 +86,5 @@ I recommend using Visual Studio 2022
 In this project, I decided not to implement the command pattern because I believe it is better suited for situations where commands can be unexecuted and a command history is important.
 
 When a variable can only have a specific set of values, I prefer to use an enum rather than checking the value using a method. An example of this would be the names of the months, which never change and there are many of them, imo it is appropriate to use an enum when there are seven or more options.
+
+Last thing, provide clear feedback to the user, such as error messages or prompts, to indicate when they have entered invalid inputs or encountered errors
