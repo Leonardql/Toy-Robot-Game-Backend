@@ -17,12 +17,29 @@ namespace Toy_Robot_Game
             this.robot = robot;
         }
 
-        
-
-        
         public void PlaceRobot(int row, int col, string facing)
         {
-            throw new NotImplementedException();
+            if (board.IsValidLocation(row, col))
+            {
+                if (robot.Placed)
+                {
+                    //remove old position
+                    board.PlaceOnBoard(row, col, 0);
+                    robot.Placed = false;
+
+                    PlaceRobot(row, col, facing);
+                }
+                else
+                {
+                    robot.Row = row;
+                    robot.Col = col;
+                    robot.Facing = facing;
+
+                    board.PlaceOnBoard(robot.Row,robot.Col, 1);
+
+                    robot.Placed = true;
+                }
+            }
         }
 
         public void PlaceWall(int row, int col)
