@@ -61,7 +61,41 @@ namespace Toy_Robot_Game
 
         public void Move()
         {
-            throw new NotImplementedException();
+            if (robot.Placed)
+            {
+                switch (robot.Facing)
+                {
+                    case "NORTH":
+
+                        if (board.IsEmptySquare(robot.Row, (robot.Col == board.Cols) ? 1 : robot.Col + 1))
+                        {
+
+                            PlaceRobot(robot.Row, (robot.Col == board.Cols) ? 1 : robot.Col + 1, robot.Facing);
+                        }
+                        break;
+                    case "SOUTH":
+                        if (board.IsEmptySquare(robot.Row, (robot.Col == 1) ? board.Cols : robot.Col - 1))
+                        {
+
+                            PlaceRobot(robot.Row, (robot.Col == 1) ? board.Cols : robot.Col - 1, robot.Facing);
+                        }
+                        break;
+                    case "EAST":
+                        if (board.IsEmptySquare((robot.Row == board.Rows) ? 1 : robot.Row + 1, robot.Col))
+                        {
+
+                            PlaceRobot((robot.Row == board.Rows) ? 1 : robot.Row + 1, robot.Col, robot.Facing);
+                        }
+                        break;
+                    case "WEST":
+                        if (board.IsEmptySquare((robot.Row == board.Rows) ? 1 : robot.Row - 1, robot.Col))
+                        {
+
+                            PlaceRobot((robot.Row == board.Rows) ? 1 : robot.Row - 1, robot.Col, robot.Facing);
+                        }
+                        break;
+                }
+            }
         }
 
 

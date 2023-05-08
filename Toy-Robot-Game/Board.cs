@@ -13,16 +13,19 @@ namespace Toy_Robot_Game
         private int cols;
         private int[,] board;
 
+        public int Rows { get => rows; set => rows = value; }
+        public int Cols { get => cols; set => cols = value; }
+
         public Board(int rows, int cols)
         {
-            this.rows = rows;
-            this.cols = cols;
+            this.Rows = rows;
+            this.Cols = cols;
             board = new int[rows + 1, cols + 1];
         }
 
         public bool IsValidLocation(int row, int col)
         {
-            if (row < 0 || col < 0 || row > rows || col > cols)
+            if (row < 0 || col < 0 || row > Rows || col > Cols)
             {
                 return false;
             }
