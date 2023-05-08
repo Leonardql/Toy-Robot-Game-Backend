@@ -52,7 +52,10 @@ namespace Toy_Robot_Game
 
         public void Report()
         {
-            throw new NotImplementedException();
+            if (robot.Placed)
+            {
+                Console.WriteLine(robot.Row + "," + robot.Col + "," + robot.Facing);
+            }
         }
 
 
