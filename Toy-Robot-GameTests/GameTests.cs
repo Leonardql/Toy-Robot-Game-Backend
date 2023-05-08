@@ -79,6 +79,42 @@ namespace Toy_Robot_Game.Tests
 
         }
 
-        
+        [TestMethod()]
+        public void FirstGameTest()
+        {
+            Board board = new Board(5, 5);
+            Robot robot = new Robot();
+
+            Game game = new Game(board, robot);
+
+            game.PlaceRobot(3, 3, "NORTH");
+            game.PlaceWall(3, 5);
+            game.Move();
+            game.Move();
+            game.Right();
+            game.Move();
+            game.Move();
+            game.Move();
+            Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (1,4, "EAST"));
+        }
+
+
+        [TestMethod()]
+        public void SecondGameTeset()
+        {
+            Board board = new Board(5, 5);
+            Robot robot = new Robot();
+
+            Game game = new Game(board, robot);
+
+            game.PlaceRobot(2, 2, "WEST");
+            game.PlaceWall(1, 1);
+            game.PlaceWall(2, 2);
+            game.PlaceWall(1, 3);
+            game.Left();
+            game.Left();
+            game.Move();
+            Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (3, 2, "EAST"));
+        }
     }
 }
