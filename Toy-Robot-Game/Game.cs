@@ -98,15 +98,56 @@ namespace Toy_Robot_Game
             }
         }
 
+        public void Left()
+        {
+            if (robot.Placed)
+            {
+                switch (robot.Facing)
+                {
+                    case "NORTH":
+                        robot.Facing = "WEST";
+                        break;
+
+                    case "SOUTH":
+                        robot.Facing = "EAST";
+                        break;
+
+                    case "WEST":
+                        robot.Facing = "SOUTH";
+                        break;
+
+                    case "EAST":
+                        robot.Facing = "NORTH";
+                        break;
+                }
+            }
+        }
 
         public void Right()
         {
-            throw new NotImplementedException();
+            if (robot.Placed)
+            {
+                switch (robot.Facing)
+                {
+                    case "NORTH":
+                        robot.Facing = "EAST";
+                        break;
+
+                    case "SOUTH":
+                        robot.Facing = "WEST";
+                        break;
+
+                    case "WEST":
+                        robot.Facing = "NORTH";
+                        break;
+
+                    case "EAST":
+                        robot.Facing = "SOUTH";
+                        break;
+                }
+            }
         }
 
-        public void Left()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

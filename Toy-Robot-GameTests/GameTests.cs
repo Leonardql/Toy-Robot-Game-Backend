@@ -57,5 +57,28 @@ namespace Toy_Robot_Game.Tests
 
             Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (1, 5, "SOUTH"));
         }
+
+        [TestMethod()]
+        public void TurnTests()
+        {
+            Board board = new Board(5, 5);
+            Robot robot = new Robot();
+
+            Game game = new Game(board, robot);
+
+            game.PlaceRobot(1, 1, "NORTH");
+
+            game.Left();
+
+            Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (1, 1, "WEST"));
+
+            game.Right();
+
+            Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (1, 1, "NORTH"));
+
+
+        }
+
+        
     }
 }
