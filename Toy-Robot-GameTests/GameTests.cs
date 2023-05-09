@@ -100,7 +100,7 @@ namespace Toy_Robot_Game.Tests
         }
 
         [TestMethod()]
-        public void TurnTests()
+        public void TurnTest()
         {
             Board board = new(5, 5);
             Robot robot = new();
@@ -141,7 +141,7 @@ namespace Toy_Robot_Game.Tests
 
 
         [TestMethod()]
-        public void SecondGameTeset()
+        public void SecondGameTest()
         {
             Board board = new(5, 5);
             Robot robot = new();
@@ -158,8 +158,7 @@ namespace Toy_Robot_Game.Tests
             Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (3, 2, "EAST"));
         }
 
-        
+       
 
-        
     }
 }
