@@ -158,7 +158,47 @@ namespace Toy_Robot_Game.Tests
             Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (3, 2, "EAST"));
         }
 
-       
+
+        [TestMethod()]
+        public void RobotStaysInsideBoardRowSideTest()
+        {
+            Board board = new(5, 5);
+            Robot robot = new();
+
+            Game game = new(board, robot);
+
+            game.PlaceRobot(1, 2, "WEST");
+            game.Move();
+
+            Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (5, 2, "WEST"));
+
+
+            game.PlaceRobot(5, 2, "EAST");
+            game.Move();
+
+            Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (1, 2, "EAST"));
+        }
+
+        [TestMethod()]
+        public void RobotStaysInsideBoardColSideTest()
+        {
+            Board board = new(5, 5);
+            Robot robot = new();
+
+            Game game = new(board, robot);
+
+            game.PlaceRobot(1, 5, "NORTH");
+            game.Move();
+
+            Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (1, 1, "NORTH"));
+
+
+            game.PlaceRobot(1, 1, "SOUTH");
+            game.Move();
+
+            Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (1, 5, "SOUTH"));
+        }
+
 
     }
 }
