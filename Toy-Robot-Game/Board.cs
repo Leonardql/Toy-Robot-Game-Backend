@@ -11,7 +11,7 @@ namespace Toy_Robot_Game
     {
         private int rows;
         private int cols;
-        private int[,] board;
+        readonly int[,] board;
 
         public int Rows { get => rows; set => rows = value; }
         public int Cols { get => cols; set => cols = value; }

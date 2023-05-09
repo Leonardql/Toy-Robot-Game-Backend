@@ -33,19 +33,19 @@ namespace Toy_Robot_Game
         REPORT
 
         */
-        public static void Main(string[] args)
+        public static void Main()
         {
-            Board board = new Board(5, 5);
-            Robot robot = new Robot();
+            Board board = new(5, 5);
+            Robot robot = new();
 
-            Game game = new Game(board, robot);
+            Game game = new(board, robot);
 
 
-            string fullCommand;
+            string? fullCommand;
            
             fullCommand = Console.ReadLine();
-
-            while (fullCommand != "EXIT")
+                
+            while (!string.IsNullOrEmpty(fullCommand))
             {
                 string[] command = fullCommand.Split(" ");
                 
@@ -75,6 +75,9 @@ namespace Toy_Robot_Game
 
                     case "RIGHT":
                         game.Right();
+                        break;
+                    default:
+                        Console.WriteLine("wrong command");
                         break;
 
                 }

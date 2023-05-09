@@ -14,10 +14,10 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void PlaceRobotTest()
         {
-            Board board = new Board(5, 5);
-            Robot robot = new Robot();
+            Board board = new(5, 5);
+            Robot robot = new();
 
-            Game game = new Game(board, robot);
+            Game game = new(board, robot);
 
             game.PlaceRobot(2, 3, "NORTH");
             Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (2, 3, "NORTH"));
@@ -28,10 +28,10 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void RobotIsPlacedTest()
         {
-            Board board = new Board(5, 5);
-            Robot robot = new Robot();
+            Board board = new(5, 5);
+            Robot robot = new();
 
-            Game game = new Game(board, robot);
+            Game game = new(board, robot);
             game.PlaceRobot(2, 2, "WEST");
 
             Assert.AreEqual(board.Square(2, 2), 1);
@@ -40,10 +40,10 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void RobotIsMovedAfterMoveTest()
         {
-            Board board = new Board(5, 5);
-            Robot robot = new Robot();
+            Board board = new(5, 5);
+            Robot robot = new();
 
-            Game game = new Game(board, robot);
+            Game game = new(board, robot);
             game.PlaceRobot(2, 2, "NORTH");
 
             game.Move();
@@ -54,10 +54,10 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void RobotIsRemovedAfterMoveTest()
         {
-            Board board = new Board(5, 5);
-            Robot robot = new Robot();
+            Board board = new(5, 5);
+            Robot robot = new();
 
-            Game game = new Game(board, robot);
+            Game game = new(board, robot);
             game.PlaceRobot(2, 2, "NORTH");
 
             game.Move();
@@ -69,10 +69,10 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void PlaceWallTest()
         {
-            Board board = new Board(5, 5);
-            Robot robot = new Robot();
+            Board board = new(5, 5);
+            Robot robot = new();
 
-            Game game = new Game(board, robot);
+            Game game = new(board, robot);
 
             game.PlaceWall(2, 3);
             Assert.AreEqual(board.Square(2, 3), 2);
@@ -81,10 +81,10 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void MoveTest()
         {
-            Board board = new Board(5, 5);
-            Robot robot = new Robot();
+            Board board = new(5, 5);
+            Robot robot = new();
 
-            Game game = new Game(board, robot);
+            Game game = new(board, robot);
 
             game.PlaceRobot(1, 1, "NORTH");
 
@@ -102,10 +102,10 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void TurnTests()
         {
-            Board board = new Board(5, 5);
-            Robot robot = new Robot();
+            Board board = new(5, 5);
+            Robot robot = new();
 
-            Game game = new Game(board, robot);
+            Game game = new(board, robot);
 
             game.PlaceRobot(1, 1, "NORTH");
 
@@ -123,10 +123,10 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void FirstGameTest()
         {
-            Board board = new Board(5, 5);
-            Robot robot = new Robot();
+            Board board = new(5, 5);
+            Robot robot = new();
 
-            Game game = new Game(board, robot);
+            Game game = new(board, robot);
 
             game.PlaceRobot(3, 3, "NORTH");
             game.PlaceWall(3, 5);
@@ -143,10 +143,10 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void SecondGameTeset()
         {
-            Board board = new Board(5, 5);
-            Robot robot = new Robot();
+            Board board = new(5, 5);
+            Robot robot = new();
 
-            Game game = new Game(board, robot);
+            Game game = new(board, robot);
 
             game.PlaceRobot(2, 2, "WEST");
             game.PlaceWall(1, 1);

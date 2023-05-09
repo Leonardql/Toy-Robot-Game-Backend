@@ -14,11 +14,10 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void IsFacingValidTest()
         {
-            Robot robot = new Robot();
 
-            Assert.AreEqual(robot.IsFacingValid("CENTER"), false);
+            Assert.AreEqual(Robot.IsFacingValid("CENTER"), false);
 
-            Assert.AreEqual(robot.IsFacingValid("NORTH"), true);
+            Assert.AreEqual(Robot.IsFacingValid("NORTH"), true);
         }
     }
 }

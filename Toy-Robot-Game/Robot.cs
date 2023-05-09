@@ -9,8 +9,8 @@ namespace Toy_Robot_Game
     public class Robot
     {
         private int col;
-        private string facing;
         private int row;
+        private string facing;
         private bool placed;
 
         public Robot()
@@ -23,7 +23,7 @@ namespace Toy_Robot_Game
         public string Facing { get => facing; set => facing = value; }
         public bool Placed { get => placed; set => placed = value; }
 
-        public  bool IsFacingValid(string nfacing)
+        public static bool IsFacingValid(string nfacing)
         {
             
             if (nfacing == "NORTH" || nfacing == "SOUTH" || nfacing == "WEST" || nfacing == "EAST")

@@ -14,7 +14,7 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void IsValidLocationTest()
         {
-            Board board = new Board(5, 5);
+            Board board = new(5, 5);
 
 
             Assert.AreEqual(board.IsValidLocation(5, 6), false);
@@ -26,7 +26,7 @@ namespace Toy_Robot_Game.Tests
         public void IsEmptySquareTest()
         {
 
-            Board board = new Board(5, 5);
+            Board board = new(5, 5);
 
             board.PlaceOnBoard(1, 2, 1);
 
@@ -42,7 +42,7 @@ namespace Toy_Robot_Game.Tests
         [TestMethod()]
         public void PlaceOnBoardTest()
         {
-            Board board = new Board(5, 5);
+            Board board = new (5, 5);
 
             board.PlaceOnBoard(1, 2, 1);
 

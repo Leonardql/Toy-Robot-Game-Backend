@@ -8,8 +8,8 @@ namespace Toy_Robot_Game
 {
     public class Game : ICommand
     {
-        Board board;
-        Robot robot;
+        readonly Board board;
+        readonly Robot robot;
 
         public Game(Board board, Robot robot)
         {
@@ -19,7 +19,7 @@ namespace Toy_Robot_Game
 
         public void PlaceRobot(int row, int col, string facing)
         {
-            if (board.IsValidLocation(row, col) && robot.IsFacingValid(facing))
+            if (board.IsValidLocation(row, col) && Robot.IsFacingValid(facing))
             {
                 if (robot.Placed)
                 {
