@@ -19,7 +19,7 @@ namespace Toy_Robot_Game
 
         public void PlaceRobot(int row, int col, string facing)
         {
-            if (board.IsValidLocation(row, col) && robot.IsFacingValid(facing))
+            if (board.IsValidLocation(row, col) && Robot.IsFacingValid(facing))
             {
                 if (robot.Placed)
                 {
@@ -88,14 +88,19 @@ namespace Toy_Robot_Game
                         }
                         break;
                     case "WEST":
-                        if (board.IsEmptySquare((robot.Row == board.Rows) ? 1 : robot.Row - 1, robot.Col))
+                        if (board.IsEmptySquare((robot.Row == 1) ? board.Rows : robot.Row - 1, robot.Col))
                         {
 
-                            PlaceRobot((robot.Row == board.Rows) ? 1 : robot.Row - 1, robot.Col, robot.Facing);
+                            PlaceRobot((robot.Row == 1) ? board.Rows : robot.Row - 1, robot.Col, robot.Facing);
                         }
                         break;
                 }
             }
+        }
+
+        public void RobotGoingOtherSideOffBoard()
+        {
+
         }
 
         public void Left()
