@@ -23,12 +23,14 @@ namespace Toy_Robot_Game
         public string Facing { get => facing; set => facing = value; }
         public bool Placed { get => placed; set => placed = value; }
 
-        public static bool IsFacingValid(string nfacing)
+        public  bool IsFacingValid(string nfacing)
         {
+            
             if (nfacing == "NORTH" || nfacing == "SOUTH" || nfacing == "WEST" || nfacing == "EAST")
             {
                 return true;
             }
+            Console.WriteLine("This command is ignored because facing direction is invalid.");
             return false;
         }
 

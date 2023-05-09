@@ -27,6 +27,7 @@ namespace Toy_Robot_Game
         {
             if (row < 0 || col < 0 || row > Rows || col > Cols)
             {
+                Console.WriteLine(" This command is ignored because the COL or ROW coordinate is invalid");
                 return false;
             }
             return true;
@@ -54,6 +55,18 @@ namespace Toy_Robot_Game
             {
                 return true;
             }
+            if (Square(row, col) == 1)
+            {
+                Console.WriteLine("There is a Robot on that square");
+                return false;
+            }
+
+            if (Square(row, col) == 2)
+            {
+                Console.WriteLine("There is a wall on that square");
+                return false;
+            }
+
             return false;
         }
 

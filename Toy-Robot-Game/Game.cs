@@ -19,7 +19,7 @@ namespace Toy_Robot_Game
 
         public void PlaceRobot(int row, int col, string facing)
         {
-            if (board.IsValidLocation(row, col) && Robot.IsFacingValid(facing))
+            if (board.IsValidLocation(row, col) && robot.IsFacingValid(facing))
             {
                 if (robot.Placed)
                 {
@@ -36,7 +36,7 @@ namespace Toy_Robot_Game
                     robot.Facing = facing;
 
                     board.PlaceOnBoard(robot.Row,robot.Col, 1);
-
+                    Console.WriteLine("This places a robot at row " + robot.Row + ", column "+ robot.Col + ", facing "+  robot.Facing  +".");
                     robot.Placed = true;
                 }
             }
@@ -47,6 +47,7 @@ namespace Toy_Robot_Game
             if(board.IsValidLocation(row,col) && board.IsEmptySquare(row,col))
             {
                 board.PlaceOnBoard(row, col, 2);
+                Console.WriteLine("This places a wall at row "+ row + ", column "+ col +".");
             }
         }
 
@@ -55,6 +56,10 @@ namespace Toy_Robot_Game
             if (robot.Placed)
             {
                 Console.WriteLine(robot.Row + "," + robot.Col + "," + robot.Facing);
+            }
+            else
+            {
+                Console.WriteLine("no robot on the board, place a robot using the command PLACE_ROBOT ROW,COL,FACING");
             }
         }
 
@@ -96,12 +101,13 @@ namespace Toy_Robot_Game
                         break;
                 }
             }
+            else
+            {
+                Console.WriteLine("no robot on the board, place a robot using the command PLACE_ROBOT ROW,COL,FACING");
+            }
+            
         }
 
-        public void RobotGoingOtherSideOffBoard()
-        {
-
-        }
 
         public void Left()
         {
