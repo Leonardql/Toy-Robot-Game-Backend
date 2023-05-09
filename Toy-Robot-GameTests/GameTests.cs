@@ -26,6 +26,47 @@ namespace Toy_Robot_Game.Tests
         }
 
         [TestMethod()]
+        public void RobotIsPlacedTest()
+        {
+            Board board = new Board(5, 5);
+            Robot robot = new Robot();
+
+            Game game = new Game(board, robot);
+            game.PlaceRobot(2, 2, "WEST");
+
+            Assert.AreEqual(board.Square(2, 2), 1);
+        }
+
+        [TestMethod()]
+        public void RobotIsMovedAfterMoveTest()
+        {
+            Board board = new Board(5, 5);
+            Robot robot = new Robot();
+
+            Game game = new Game(board, robot);
+            game.PlaceRobot(2, 2, "NORTH");
+
+            game.Move();
+
+            Assert.AreEqual(board.Square(2, 3), 1);
+        }
+
+        [TestMethod()]
+        public void RobotIsRemovedAfterMoveTest()
+        {
+            Board board = new Board(5, 5);
+            Robot robot = new Robot();
+
+            Game game = new Game(board, robot);
+            game.PlaceRobot(2, 2, "NORTH");
+
+            game.Move();
+
+            Assert.AreEqual(board.Square(2, 2), 0);
+        }
+
+
+        [TestMethod()]
         public void PlaceWallTest()
         {
             Board board = new Board(5, 5);
@@ -95,7 +136,7 @@ namespace Toy_Robot_Game.Tests
             game.Move();
             game.Move();
             game.Move();
-            Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (1,4, "EAST"));
+            Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (1, 4, "EAST"));
         }
 
 
@@ -116,5 +157,9 @@ namespace Toy_Robot_Game.Tests
             game.Move();
             Assert.AreEqual((robot.Row, robot.Col, robot.Facing), (3, 2, "EAST"));
         }
+
+        
+
+        
     }
 }

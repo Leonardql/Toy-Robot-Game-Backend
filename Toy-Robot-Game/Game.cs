@@ -24,7 +24,7 @@ namespace Toy_Robot_Game
                 if (robot.Placed)
                 {
                     //remove old position
-                    board.PlaceOnBoard(row, col, 0);
+                    board.PlaceOnBoard(robot.Row,robot.Col, 0);
                     robot.Placed = false;
 
                     PlaceRobot(row, col, facing);

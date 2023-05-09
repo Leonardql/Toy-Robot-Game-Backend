@@ -16,9 +16,9 @@ namespace Toy_Robot_Game.Tests
         {
             Robot robot = new Robot();
 
-            Assert.AreEqual(Robot.IsFacingValid("CENTER"), false);
+            Assert.AreEqual(robot.IsFacingValid("CENTER"), false);
 
-            Assert.AreEqual(Robot.IsFacingValid("NORTH"), true);
+            Assert.AreEqual(robot.IsFacingValid("NORTH"), true);
         }
     }
 }
